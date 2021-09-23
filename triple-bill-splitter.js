@@ -23,10 +23,7 @@ function splitTheBill(person1Paid, person2Paid, person3Paid) {
 
     console.log(`Owed1: ${owed1}, Owed2: ${owed2}, Owed3: ${owed3}`)
 
-    if(person1Paid === person2Paid && person2Paid === person3Paid) {
-        return "No one owes anyone money!"
-    }
-    else if(person1Paid === person2Paid && person2Paid > person3Paid) {
+    if(person1Paid === person2Paid && person2Paid > person3Paid) {
         return `Person 3 owes Person 1 and Person 2 $${owed3 /2}`
     }
     else if(person1Paid === person3Paid && person3Paid > person2Paid) {
@@ -34,6 +31,15 @@ function splitTheBill(person1Paid, person2Paid, person3Paid) {
     }
     else if(person2Paid === person3Paid && person3Paid > person1Paid) {
         return `Person 1 owes Person 2 and Person 3 $${owed1 / 2}`
+    }
+    else if(person2Paid === person1Paid && person1Paid > person3Paid) {
+        return `Person 3 owes Person 1 and Person 2 $${owed1 / 2}`
+    }
+    else if(person3Paid === person2Paid && person2Paid > person1Paid) {
+        return `Person 1 owes Person 2 and Person 3 $${owed1 / 2}`
+    }
+    else if(person3Paid === person1Paid && person1Paid > person2Paid) {
+        return `Person 2 owes Person 1 and Person 3 $${owed1 / 2}`
     }
     else if(person1Paid > person2Paid && person1Paid > person3Paid && person2Paid > person3Paid) {
         return `Person 3 owes Person 1 $${owed3}`
@@ -52,6 +58,9 @@ function splitTheBill(person1Paid, person2Paid, person3Paid) {
     }
     else if(person3Paid > person2Paid && person3Paid > person1Paid && person2Paid < person1Paid) {
         return `Person 2 owes Person 3 $${owed2}`
+    }
+    else {
+        return "No one owes anyone money!"
     }
 
 }

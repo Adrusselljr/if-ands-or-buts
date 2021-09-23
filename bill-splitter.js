@@ -19,6 +19,9 @@ else if(person2Paid > person1Paid) {
     owed = each - person1Paid
     console.log(`Person 1 owes Person 2 $${owed}`)
 }
-else {
+else if(person1Paid === person2Paid) {
     console.log("Noone owes anyone money!")
+}
+else {
+    console.log("Error")
 }
